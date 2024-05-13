@@ -111,8 +111,16 @@ class Model(torch.nn.Module):
             torch.nn.ReLU(),
             torch.nn.MaxPool2d(2)
         )
+        self.conv_layer_5 = torch.nn.Sequential(
+            torch.nn.Conv2d(128, 256, kernel_size=3, padding='same'),
+            torch.nn.BatchNorm2d(256),
+            torch.nn.ReLU(),
+            torch.nn.MaxPool2d(2)
+        )
+
+
         self.fc_layer_1 = torch.nn.Sequential(
-            torch.nn.Linear(7*7*128, 128),
+            torch.nn.Linear(3*3*256, 128), #torch.nn.Linear(7*7*128, 128),
             torch.nn.Dropout(),
             torch.nn.ReLU()
         )
@@ -122,6 +130,7 @@ class Model(torch.nn.Module):
         x = self.conv_layer_2(x)
         x = self.conv_layer_3(x)
         x = self.conv_layer_4(x)
+        x = self.conv_layer_5(x)
         x = x.view(x.size(0), -1) # Flatten
         x = self.fc_layer_1(x)
         x = self.fc_layer_2(x)
