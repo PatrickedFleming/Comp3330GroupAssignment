@@ -117,6 +117,12 @@ class Model(torch.nn.Module):
             torch.nn.ReLU(),
             torch.nn.MaxPool2d(2)
         )
+        self.conv_layer_6 = torch.nn.Sequential(
+            torch.nn.Conv2d(256, 512, kernel_size=3, padding='same'),
+            torch.nn.BatchNorm2d(512),
+            torch.nn.ReLU(),
+            torch.nn.MaxPool2d(2)
+        )
 
 
         self.fc_layer_1 = torch.nn.Sequential(
@@ -131,6 +137,8 @@ class Model(torch.nn.Module):
         x = self.conv_layer_3(x)
         x = self.conv_layer_4(x)
         x = self.conv_layer_5(x)
+        #x = self.conv_layer_6(x)
+        
         x = x.view(x.size(0), -1) # Flatten
         x = self.fc_layer_1(x)
         x = self.fc_layer_2(x)
@@ -146,7 +154,7 @@ loss_fn = torch.nn.CrossEntropyLoss()
 train_losses, val_losses = [], []
 train_accs, val_accs = [], []
 # Train for 10 epochs
-for epoch in range(25):
+for epoch in range(75):
     ### Training
     # Track epoch loss and accuracy
     epoch_loss, epoch_accuracy = 0, 0
@@ -225,3 +233,8 @@ with torch.no_grad():
 print("Test loss: {:.4f}".format(test_loss))
 print("Test accuracy: {:.2f}%".format(test_accuracy*100))
 plt.show()
+
+# SAVE MODEL
+if True:
+    model = Model()  # Assume model is an instance of your model
+    torch.save(model, 'CNN.pth')

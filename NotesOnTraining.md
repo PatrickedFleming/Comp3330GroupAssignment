@@ -45,4 +45,29 @@ Test loss: 5.4258
 Test accuracy: 24.14%
 ```
 
-appeared to flatline after 50 epoch, so going to decrease learning rate, try again..
+appeared to flatline after 50 epoch, so going to decrease learning rate (0.0001), try again..
+```
+Epoch: 250, train accuracy: 100.00%, train loss: 0.0966
+Epoch: 250, val accuracy: 31.03%, val loss: 2.6589
+Test loss: 3.1299
+Test accuracy: 27.59%
+```
+now flatlines at around 100 epochs
+
+# Trying a batchsize of 16
+lr=0.001, 6 convolution layers
+```
+Epoch: 75, val accuracy: 17.24%, val loss: 3.0810
+Test loss: 4.6147
+Test accuracy: 13.79%
+```
+
+# Trying Batchsize of 64 again:
+```
+Epoch: 75, val accuracy: 24.14%, val loss: 2.8812
+Test loss: 3.8358
+Test accuracy: 27.59%
+```
+
+# TRYING WITH 10 LAYERS
+error has feature maps is reduced to much?
