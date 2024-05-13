@@ -29,3 +29,20 @@ Test loss: 3.6078
 Test accuracy: 13.79%
 ```
 Much better accuracy.
+
+# Trying 6th Layer
+```
+Epoch: 25, val accuracy: 13.79%, val loss: 3.1940
+Test loss: 3.8979
+Test accuracy: 6.90%
+```
+
+after epoch 250:
+```
+Epoch: 250, train accuracy: 98.44%, train loss: 0.0515
+Epoch: 250, val accuracy: 24.14%, val loss: 4.4472
+Test loss: 5.4258
+Test accuracy: 24.14%
+```
+
+appeared to flatline after 50 epoch, so going to decrease learning rate, try again..
