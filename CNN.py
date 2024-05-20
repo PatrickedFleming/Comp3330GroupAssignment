@@ -229,6 +229,12 @@ with torch.no_grad():
         acc = ((test_output_i.argmax(dim=1) == label).float().mean())
         test_accuracy += acc/len(test_loader)
         test_loss += test_loss_i/len(test_loader)
+        # Print Results
+        if True:
+            print("RESULTS")
+            print(label)
+            print(test_output_i.argmax(dim=1))
+            print("")
 
 print("Test loss: {:.4f}".format(test_loss))
 print("Test accuracy: {:.2f}%".format(test_accuracy*100))
@@ -236,5 +242,4 @@ plt.show()
 
 # SAVE MODEL
 if True:
-    model = Model()  # Assume model is an instance of your model
     torch.save(model, 'CNN.pth')
