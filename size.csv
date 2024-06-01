@@ -1,0 +1,46 @@
+Models Name	File Size (KB)	Train Time(m/s)	Train Loss	Train Acc	Val Loss	Vall Acc	Eval Time (s)	Eval Loss	Eval Acc	Trained on sams and given data 
+Swin_V2_t	111233	18/19.6	2.908	0.8235	2.9746	0.7573	9.6	2.9541	0.7765	
+Vit_b_32	344683	17/40.7	2.8812	0.8506	2.9794	0.7487	8.7	2.9639	0.7662	
+Vit_b_16	338212	19/50.8	2.9484	0.781	3.0208	0.7162	11.2	2.9942	0.744	Hit early stop at 15 epochs
+Swin_V2_b	344445	19/10.0	2.9446	0.7869	2.9966	0.7316	13.3	2.9533	0.7765	Hit early stop at 14 epochs
+ConvNeXt Large	772647	31/1.4	2.8825	0.8499	2.9179	0.812	16.4	2.8946	0.8362	
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
